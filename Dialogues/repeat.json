@@ -1,0 +1,141 @@
+{
+    "00001.1": {
+        "name": "SOLDIER", 
+        "type": "question",
+        "expression":"neutral",
+        "text":"Waddya' say? Lend a hand?",
+        "options": ["Sure...", "Not interested.", "Exit"],
+        "next": ["00001.2", "00001.3"]
+    },
+    "00001.2": {
+        "name": "SOLDIER", 
+        "type": "text",
+        "expression":"neutral",
+        "text":"Hey, thanks a lot!",
+        "next": "00001.4"
+    },
+    "00001.3": {
+        "name": "SOLDIER", 
+        "type": "text",
+        "expression":"neutral",
+        "text":"That's too bad... Well, if you change your mind, let me know again.",
+        "goto": "00001.1"
+    },
+    "00001.4": {
+        "name": "SOLDIER", 
+        "type": "text",
+        "expression":"neutral",
+        "text":"Well, you see, my old man across the field has been a little grumpy lately.",
+        "next": "00001.5"
+    },
+    "00001.5": {
+        "name": "SOLDIER", 
+        "type": "text",
+        "expression":"neutral",
+        "text":"If you don't mind, can you help me deliver this to him?",
+        "next": "00001.6",
+        "giveQuest": {
+            "questName": "Old Man Delivery", 
+            "completedID":"00001.7"
+        },
+        "giveItem": {
+            "itemID": "501",
+            "itemName": "Thing", 
+            "itemType": "key"
+        }
+    },
+    "00001.6": {
+        "name": "SOLDIER", 
+        "type": "text",
+        "expression":"neutral",
+        "text":"I'm sure it will cheer him up a little.",
+        "next":"00001.7"
+    },
+    "00001.7": {
+        "name": "SOLDIER", 
+        "type": "text",
+        "expression":"neutral",
+        "text":"And while you're at it, help me pass this to the little boy.",
+        "giveQuest": {
+            "questName": "Boy Needs Potion", 
+            "completedID":"00001.8"
+        },
+        "giveItem": {
+            "itemID": "001",
+            "itemName": "Potion", 
+            "itemType": "health"
+        },
+        "goto":"00001.5"
+    },
+    "00001.8": {
+        "name": "SOLDIER", 
+        "type": "text",
+        "expression":"neutral",
+        "text":"Thanks for helping me out!"
+    },
+    "00003.1": {
+        "name": "Boy",
+        "type": "text", 
+        "expression":"neutral", 
+        "text":"A potion for me? Thank you!",
+        "completeQuest":"Boy Needs Potion",
+        "goto":"00003.2"
+    },
+    "00003.2": {
+        "name": "Boy",
+        "type": "text", 
+        "expression":"neutral", 
+        "text":"Hurrah!"
+    },
+    "00005.1": {
+        "name": "Old Man",
+        "type": "text",
+        "expression":"neutral", 
+        "text":"...",
+        "extraRepeat": "00005.2",
+        "needsItem": {
+            "itemID": "501",
+            "itemName": "Thing", 
+            "itemType": "key", 
+            "next": "00006"
+        }
+    },
+    "00005.2": {
+        "name": "Old Man",
+        "type": "text",
+        "expression":"neutral", 
+        "text":"...",
+        "extraRepeat": "00005.3",
+        "needsItem": {
+            "itemID": "501",
+            "itemName": "Thing", 
+            "itemType": "key", 
+            "next": "00006"
+        }
+    },
+    "00005.3": {
+        "name": "Old Man", 
+        "type": "text",
+        "expression":"neutral", 
+        "text":"Stop talking to me.",
+        "needsItem": {
+            "itemID": "501",
+            "itemName": "Thing", 
+            "itemType": "key", 
+            "next": "00006"
+        }
+    },
+    "00005.4": {
+        "name": "Old Man", 
+        "type": "text",
+        "expression":"neutral", 
+        "text":"Thanks for this! I'm much happier now.",
+        "next":"00005.5"
+    },
+    "00005.5": {
+        "name": "Old Man", 
+        "type": "text",
+        "expression":"neutral", 
+        "text":"Help me thank that soldier kiddo."
+    }
+}

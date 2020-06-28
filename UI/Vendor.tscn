@@ -1,0 +1,365 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://UI/textbox.png" type="Texture" id=1]
+[ext_resource path="res://UI/carat_toggle_up.png" type="Texture" id=2]
+[ext_resource path="res://UI/Verdana.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/carat_toggle_down.png" type="Texture" id=4]
+[ext_resource path="res://UI/DialogueOptions.gd" type="Script" id=5]
+[ext_resource path="res://UI/Vendor.gd" type="Script" id=6]
+[ext_resource path="res://UI/VendorParser.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 14
+font_data = ExtResource( 3 )
+
+[node name="Vendor" type="Popup" groups=[
+"UI",
+]]
+margin_top = 0.17028
+margin_right = 640.0
+margin_bottom = 360.17
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialogue" type="Label" parent="."]
+margin_left = 12.0
+margin_top = 28.0
+margin_right = 301.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 1 )
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextSpeed" type="Timer" parent="."]
+wait_time = 0.01
+
+[node name="VendorParser" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+items_file_path = "res://Data/items.json"
+
+[node name="Boxes" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Items" type="NinePatchRect" parent="Boxes"]
+margin_left = 192.925
+margin_top = 69.475
+margin_right = 557.925
+margin_bottom = 326.475
+rect_clip_content = true
+texture = ExtResource( 1 )
+patch_margin_left = 30
+patch_margin_top = 15
+patch_margin_right = 30
+patch_margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuySellExit" type="NinePatchRect" parent="Boxes"]
+margin_left = 36.0
+margin_top = 102.428
+margin_right = 159.0
+margin_bottom = 210.428
+rect_clip_content = true
+texture = ExtResource( 1 )
+patch_margin_left = 30
+patch_margin_top = 15
+patch_margin_right = 30
+patch_margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currency" type="NinePatchRect" parent="Boxes"]
+margin_left = 560.0
+margin_top = 17.0
+margin_right = 637.0
+margin_bottom = 62.0
+rect_clip_content = true
+texture = ExtResource( 1 )
+patch_margin_left = 30
+patch_margin_top = 15
+patch_margin_right = 30
+patch_margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="NinePatchRect" parent="Boxes"]
+margin_left = 193.55
+margin_top = 17.25
+margin_right = 557.55
+margin_bottom = 62.25
+rect_clip_content = true
+texture = ExtResource( 1 )
+patch_margin_left = 30
+patch_margin_top = 15
+patch_margin_right = 30
+patch_margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Greeting" type="NinePatchRect" parent="Boxes"]
+margin_left = 31.0
+margin_top = 15.0
+margin_right = 179.0
+margin_bottom = 90.0
+rect_clip_content = true
+texture = ExtResource( 1 )
+patch_margin_left = 30
+patch_margin_top = 15
+patch_margin_right = 30
+patch_margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Labels" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CostLabel" type="Label" parent="Labels"]
+margin_left = 380.0
+margin_top = 75.0
+margin_right = 445.0
+margin_bottom = 114.0
+custom_fonts/font = SubResource( 2 )
+text = "Cost
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemLabel" type="Label" parent="Labels"]
+margin_left = 220.0
+margin_top = 75.0
+margin_right = 285.0
+margin_bottom = 114.0
+custom_fonts/font = SubResource( 2 )
+text = "Item"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OwnedLabel" type="Label" parent="Labels"]
+margin_left = 450.0
+margin_top = 75.0
+margin_right = 515.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 2 )
+text = "Owned
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="VendorName" type="Label" parent="Text"]
+margin_left = 36.0
+margin_top = 20.0
+margin_right = 174.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreetingsText" type="Label" parent="Text"]
+margin_left = 39.6324
+margin_top = 41.4702
+margin_right = 171.632
+margin_bottom = 85.4702
+custom_fonts/font = SubResource( 3 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuySellExitText" type="Label" parent="Text"]
+margin_left = 46.8602
+margin_top = 113.128
+margin_right = 130.86
+margin_bottom = 197.128
+custom_fonts/font = SubResource( 2 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescriptionText" type="Label" parent="Text"]
+margin_left = 210.472
+margin_top = 22.5032
+margin_right = 539.472
+margin_bottom = 55.5032
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrencyText" type="Label" parent="Text"]
+margin_left = 563.0
+margin_top = 37.8297
+margin_right = 628.0
+margin_bottom = 53.8297
+custom_fonts/font = SubResource( 5 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrencyLabel" type="Label" parent="Text"]
+margin_left = 563.0
+margin_top = 20.0
+margin_right = 628.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 5 )
+text = "Coins: "
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuOptions" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BuyLabel" type="Label" parent="MenuOptions"]
+margin_left = 50.0
+margin_top = 110.0
+margin_right = 136.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 4 )
+text = "Buy"
+autowrap = true
+clip_text = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selector" type="ColorRect" parent="MenuOptions/BuyLabel"]
+visible = false
+margin_left = -20.0
+margin_top = -0.568802
+margin_right = 200.0
+margin_bottom = 19.4312
+color = Color( 1, 1, 1, 0.282353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SellLabel" type="Label" parent="MenuOptions"]
+margin_left = 50.0
+margin_top = 140.0
+margin_right = 136.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 4 )
+text = "Sell
+"
+autowrap = true
+clip_text = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selector" type="ColorRect" parent="MenuOptions/SellLabel"]
+visible = false
+margin_left = -20.0
+margin_top = -0.568802
+margin_right = 200.0
+margin_bottom = 19.4312
+color = Color( 1, 1, 1, 0.282353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitLabel" type="Label" parent="MenuOptions"]
+margin_left = 50.0
+margin_top = 170.0
+margin_right = 136.0
+margin_bottom = 189.0
+custom_fonts/font = SubResource( 4 )
+text = "Exit
+"
+autowrap = true
+clip_text = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selector" type="ColorRect" parent="MenuOptions/ExitLabel"]
+visible = false
+margin_left = -20.0
+margin_top = -0.568802
+margin_right = 200.0
+margin_bottom = 19.4312
+color = Color( 1, 1, 1, 0.282353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemOptions" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="CaratUp" type="Sprite" parent="."]
+visible = false
+position = Vector2( 500, 113 )
+scale = Vector2( 0.192572, 0.175342 )
+texture = ExtResource( 2 )
+
+[node name="CaratDown" type="Sprite" parent="."]
+visible = false
+position = Vector2( 500, 128 )
+scale = Vector2( 0.192572, 0.175342 )
+texture = ExtResource( 4 )
+[connection signal="timeout" from="TextSpeed" to="Dialogue" method="_on_Timer_timeout"]
+[connection signal="timeout" from="InputTimer" to="." method="_on_InputTimer_timeout"]

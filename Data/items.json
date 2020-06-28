@@ -1,0 +1,64 @@
+{
+    "001": {
+        "itemName": "Potion",
+        "itemType": "health",
+        "itemDescription": "Restores 150 HP.",
+        "itemCost": 300,
+        "itemOffer": 200
+    },
+    "002": {
+        "itemName": "Potion1",
+        "itemType": "health",
+        "itemDescription": "Restores 150 HP.",
+        "itemCost": 300,
+        "itemOffer": 200
+    },
+    "003": {
+        "itemName": "Potion2",
+        "itemType": "health",
+        "itemDescription": "Restores 250 HP.",
+        "itemCost": 300,
+        "itemOffer": 200
+    },
+    "004": {
+        "itemName": "Potion3",
+        "itemType": "health",
+        "itemDescription": "Restores 350 HP.",
+        "itemCost": 300,
+        "itemOffer": 200
+    },
+    "005": {
+        "itemName": "Potion4",
+        "itemType": "health",
+        "itemDescription": "Restores 450 HP.",
+        "itemCost": 300,
+        "itemOffer": 200
+    },
+    "006": {
+        "itemName": "Potion5",
+        "itemType": "health",
+        "itemDescription": "Restores 150 HP.",
+        "itemCost": 300,
+        "itemOffer": 200
+    },
+    "007": {
+        "itemName": "Potion6",
+        "itemType": "health",
+        "itemDescription": "Restores 150 HP.",
+        "itemCost": 300,
+        "itemOffer": 200
+    },
+    "201": {
+        "itemName": "Broadsword",
+        "itemType": "Weapon",
+        "itemDescription": "A long sword.",
+        "itemCost": 300,
+        "itemOffer": 200
+    },
+
+    "501": {
+        "itemName": "Thing",
+        "itemType": "key"
+    }
+
+}

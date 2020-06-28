@@ -1,0 +1,90 @@
+{
+    "00000": {
+
+    },
+    "00001": {
+        "name": "SOLDIER", 
+        "type": "text",
+        "expression":"neutral", 
+        "text":"I don't know what to say. I'm just here because you put me here.",
+        "next": "00002",
+        "extraRepeat": "00001.1"
+    },
+    "00002": {
+        "from": "00001",
+        "name": "SOLDIER",
+        "type": "text", 
+        "expression":"neutral", 
+        "text":"Say, when you're free, help me out will ya?"
+    },
+    "00003": {
+        "name": "Boy", 
+        "type": "text",
+        "expression":"neutral",
+        "text":"I'm a little boy!",
+        "next": "00004",
+        "needsItem": {
+            "itemID": "001",
+            "itemName": "Potion", 
+            "itemType": "Health", 
+            "next": "00003.1"
+        }
+    },
+    "00004": {
+        "from": "00003",
+        "name": "Boy",
+        "type": "text", 
+        "expression":"neutral", 
+        "text":"I'm 10 years old!"
+    },
+    "00005": {
+        "name": "Old Man",
+        "type": "text", 
+        "expression":"neutral", 
+        "text":"I have nothing to say to you.",
+        "extraRepeat": "00005.1",
+        "needsItem": {
+            "itemID": "501",
+            "itemName": "Thing", 
+            "itemType": "key", 
+            "next": "00006"
+        }
+    },
+    "00006": {
+        "name": "Old Man",
+        "type": "text", 
+        "expression":"neutral", 
+        "text":"Oh my, is that what I think it is?",
+        "next":"00007"
+    },
+    "00007": {
+        "name": "Old Man",
+        "type": "question", 
+        "expression":"neutral", 
+        "text":"That looks beautiful! Mind giving that to me?",
+        "options": ["It's for you.", "Nope.", "Exit"],
+        "next": ["00008", "00009"]
+    },
+    "00008": {
+        "name": "Old Man",
+        "type": "text", 
+        "expression":"neutral", 
+        "text":"Sweet, thanks!",
+        "completeQuest":"Old Man Delivery",
+        "goto": "00005.4"
+    },
+    "00009": {
+        "name": "Old Man",
+        "type": "text", 
+        "expression":"neutral", 
+        "text":"Damn punk.",
+        "goto":"00007"
+    },
+    "00010": {
+        "name": "Woman",
+        "type": "text", 
+        "expression":"neutral", 
+        "text": "Pretty boring day, huh."
+    }
+    
+}
